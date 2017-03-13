@@ -1,25 +1,3 @@
-# PESDK React Native Demo
-
-**TODO**: Replace imglyKit.framework with placeholder?
-
-See: https://imglysdk.atlassian.net/wiki/display/PESDK/PESDK+React+Native+Demo
-
-## Setup
-
-### React Native
-Install according to: https://facebook.github.io/react-native/docs/getting-started.html
-
-### iOS Application
-Add the current `imglyKit.framework` as an embedded binary to the `PESDKDemo.xcodeproj`.
-
-### Android Application
-No special setup is needed to run the Android application.
-
-## Running the apps
-Use React Natives `react-native run-ios` and `run-android` to launch emulators.
-
-
-
 <p align="center">
   <img src="http://static.photoeditorsdk.com/logo.png" />
 </p>
@@ -33,7 +11,7 @@ Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_sou
 
 
 ## PhotoEditor SDK for iOS & Android
-The [PhotoEditor SDK] (https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo) for HTML5 is a **fully customizable** photo editor which you can integrate into your Rails app within minutes.
+The [PhotoEditor SDK] (https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
 
 ## Setup
 
