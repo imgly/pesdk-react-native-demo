@@ -56,3 +56,4 @@ node_modules
 *.js.meta
 
 /third-party
+/ios/build
