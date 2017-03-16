@@ -2,30 +2,22 @@
   <img src="http://static.photoeditorsdk.com/logo.png" />
 </p>
 
-# PhotoEditorSDK React Native Demonstration
-This project shows how to easily integrate the [PhotoEditorSDK](https://www.photoeditorsdk.com) into a React Native application.
+# PhotoEditorSDK React Native Demo
+This project shows how to easily integrate the [PhotoEditorSDK](https://www.photoeditorsdk.com) into a React Native application. 
+
+**THIS IS A DEMO**. This repository is not meant as a fully fledged React Native plugin, but as a base for further development instead. For more details, check the [accompanying blog post](https://blog.photoeditorsdk.com).
+
+## Example App
+The included example app demonstrates how to open the PhotoEditor SDK's editor with an image that has previously been downloaded using React Native. One can then edit the image using our editor and save it to disk or share using iOS' native share sheet.
+
+Use React Natives `react-native run-ios` and `run-android` to launch the emulators.
 
 ## Note 
-The PhotoEditorSDK is a product of 9Elements GmbH. 
+The PhotoEditorSDK is a product of 9elements GmbH. 
 Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo). Please see `LICENSE.md` for licensing details.
-
 
 ## PhotoEditor SDK for iOS & Android
 The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
-
-## Setup
-
-### React Native
-Install according to: https://facebook.github.io/react-native/docs/getting-started.html
-
-### iOS Application
-Add the current `imglyKit.framework` as an embedded binary to the `PESDKDemo.xcodeproj`.
-
-### Android Application
-No special setup is needed to run the Android application.
-
-## Running the apps
-Use React Natives `react-native run-ios` and `run-android` to launch emulators.
 
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-react-native-demo/blob/master/LICENSE.md) for licensing details.
