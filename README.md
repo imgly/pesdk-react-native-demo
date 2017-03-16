@@ -11,7 +11,7 @@ Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_sou
 
 
 ## PhotoEditor SDK for iOS & Android
-The [PhotoEditor SDK] (https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
+The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
 
 ## Setup
 
