@@ -38,6 +38,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		E90761FF1E703267002DCA73 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E90761FE1E703257002DCA73 /* libReactNativeNavigation.a */; };
 		E92424721E715AD300886182 /* PESDKModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E92424711E715AD300886182 /* PESDKModule.m */; };
+		E929371C1E7ADB4F006BA667 /* LICENSE_IOS in Resources */ = {isa = PBXBuildFile; fileRef = E929371B1E7ADB4F006BA667 /* LICENSE_IOS */; };
 		E9A8DDE81E72A8E1007CFE18 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8DDE71E72A8CA007CFE18 /* libRNFS.a */; };
 		E9CD39DB1E7692F900FCF2C4 /* imglyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CD39DA1E7692F900FCF2C4 /* imglyKit.framework */; };
 		E9CD39DC1E7692F900FCF2C4 /* imglyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9CD39DA1E7692F900FCF2C4 /* imglyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -291,6 +292,7 @@
 		E90761E01E703257002DCA73 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		E92424701E715AD300886182 /* PESDKModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PESDKModule.h; sourceTree = "<group>"; };
 		E92424711E715AD300886182 /* PESDKModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PESDKModule.m; sourceTree = "<group>"; };
+		E929371B1E7ADB4F006BA667 /* LICENSE_IOS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_IOS; sourceTree = "<group>"; };
 		E9A8DDC81E72A8C9007CFE18 /* RNFS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
 		E9CD39DA1E7692F900FCF2C4 /* imglyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = imglyKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -430,6 +432,7 @@
 		13B07FAE1A68108700A75B9A /* PESDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				E929371B1E7ADB4F006BA667 /* LICENSE_IOS */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -930,6 +933,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E929371C1E7ADB4F006BA667 /* LICENSE_IOS in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
