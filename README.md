@@ -3,7 +3,7 @@
 </p>
 
 # PhotoEditorSDK React Native Demo
-This project shows how to easily integrate the [PhotoEditorSDK](https://www.photoeditorsdk.com) into a React Native application. 
+This project shows how to easily integrate the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) into a React Native application. 
 
 **THIS IS A DEMO**. This repository is not meant as a fully fledged React Native plugin, but as a base for further development instead. For more details, check the [accompanying blog post](https://blog.photoeditorsdk.com).
 
@@ -14,10 +14,10 @@ Use React Natives `react-native run-ios` and `run-android` to launch the emulato
 
 ## Note 
 The PhotoEditorSDK is a product of 9elements GmbH. 
-Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo). Please see `LICENSE.md` for licensing details.
+Please [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo). Please see `LICENSE.md` for licensing details.
 
 ## PhotoEditor SDK for iOS & Android
-The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_source=Github&utm_medium=PESDK&utm_term=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
+The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
 
 ## License
 Please see [LICENSE](https://github.com/imgly/pesdk-react-native-demo/blob/master/LICENSE.md) for licensing details.
