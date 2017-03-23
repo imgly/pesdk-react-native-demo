@@ -12,8 +12,8 @@ import {
   NativeEventEmitter 
 } from 'react-native'
 
-var PESDK = NativeModules.PESDK
-var RNFS = require('react-native-fs')
+const PESDK = NativeModules.PESDK
+const RNFS = require('react-native-fs')
 
 export default class PESDKDemo extends Component {
   constructor (props) {
@@ -105,8 +105,8 @@ export default class PESDKDemo extends Component {
     }
 
     this.setState({ output: 'Starting image download...' })
-    let imageUrl = 'https://unsplash.it/2048/2048?image=' + item.index
-    let imagePath = RNFS.DocumentDirectoryPath + '/image.jpeg'
+    const imageUrl = 'https://unsplash.it/2048/2048?image=' + item.index
+    const imagePath = RNFS.DocumentDirectoryPath + '/image.jpeg'
     this.setState({ downloading: true })
     RNFS.downloadFile({ fromUrl: imageUrl, toFile: imagePath, progress: progress }).promise.then(result => {
       PESDK.present(imagePath)
