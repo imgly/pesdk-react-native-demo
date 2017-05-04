@@ -10,7 +10,7 @@
     "react": "~15.4.1",
     "react-native": "0.42.0",
     "react-native-fs": "^2.1.0-rc.1",
-    "react-native-navigation": "^2.0.0-experimental.239"
+    "react-native-navigation": "latest"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",
