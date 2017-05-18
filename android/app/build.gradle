@@ -138,7 +138,7 @@ dependencies {
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile project(':react-native-navigation')
     compile project(':react-native-fs')
-    compile 'ly.img.android:photo-editor-sdk:3.0.4'
+    compile 'ly.img.android:photo-editor-sdk:3.1.1'
 }
 
 // Run this once to be able to run the application with BUCK
