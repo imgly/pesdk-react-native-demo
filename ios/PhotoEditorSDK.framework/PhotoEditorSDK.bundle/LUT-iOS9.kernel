@@ -1,0 +1,63 @@
+vec3 bilinearInterpolate(vec3 cRfGf, vec3 cRfGc, vec3 cRcGf, vec3 cRcGc, float redFract, float greenFract) {
+    return mix(mix(cRfGf, cRcGf, redFract), mix(cRfGc, cRcGc, redFract), greenFract);
+}
+
+// Try to get the exact pixel of the lut map image
+vec2 lutCoord(int texPosX, int texPosY, float u_texRes) {
+    vec2 position = vec2(0.5 / u_texRes) + vec2(float(texPosX), float(texPosY)) / u_texRes;
+    return vec2(position.x, 1.0 - position.y); // for iOS 9 we need to swap this coordinate
+}
+
+kernel vec4 coreImageKernel(__sampler image, __sampler lut, float u_intensity, float u_hTileCount, float u_vTileCount, float u_texRes)
+{
+    vec4 inputColor = clamp(sample(image, samplerCoord(image)), 0.0, 1.0);
+    vec4 sourceColor = inputColor;
+    float rRange = floor(u_texRes / u_hTileCount - 1.0);
+    float gRange = floor(u_texRes / u_vTileCount - 1.0);
+    float bRange = floor(u_hTileCount * u_hTileCount - 1.0);
+
+    int rFloor = int(sourceColor.r * rRange);
+    int gFloor = int(sourceColor.g * gRange);
+    int bFloor = int(sourceColor.b * bRange);
+
+    int rCeil = int(ceil(sourceColor.r * rRange));
+    int gCeil = int(ceil(sourceColor.g * gRange));
+    int bCeil = int(ceil(sourceColor.b * bRange));
+
+    ivec2 tileFloor; // Blue tile index
+    tileFloor.y = bFloor / int(u_hTileCount);
+    tileFloor.x = bFloor - (tileFloor.y * int(u_hTileCount));
+
+    ivec2 tileCeil; // Blue tile index
+    tileCeil.y = bCeil / int(u_hTileCount);
+    tileCeil.x = bCeil - (tileCeil.y * int(u_hTileCount));
+
+    // Map tile index to tile pixel pos.
+    tileFloor *= int(u_texRes / u_hTileCount);
+    tileCeil  *= int(u_texRes / u_vTileCount);
+
+    // Interpolate between red and green
+    vec3 lutColorFB = bilinearInterpolate(
+                                          sample(lut, lutCoord(tileFloor.x + rFloor, tileFloor.y + gFloor, u_texRes)).rgb,
+                                          sample(lut, lutCoord(tileFloor.x + rFloor, tileFloor.y + gCeil, u_texRes)).rgb,
+                                          sample(lut, lutCoord(tileFloor.x + rCeil, tileFloor.y + gFloor, u_texRes)).rgb,
+                                          sample(lut, lutCoord(tileFloor.x + rCeil, tileFloor.y + gCeil, u_texRes)).rgb,
+                                          fract(sourceColor.r * rRange), fract(sourceColor.g * gRange)
+                                          );
+
+    vec3 lutColorCB = bilinearInterpolate(
+                                          sample(lut, lutCoord(tileCeil.x + rFloor, tileCeil.y + gFloor, u_texRes)).rgb,
+                                          sample(lut, lutCoord(tileCeil.x + rFloor, tileCeil.y + gCeil, u_texRes)).rgb,
+                                          sample(lut, lutCoord(tileCeil.x + rCeil, tileCeil.y + gFloor, u_texRes)).rgb,
+                                          sample(lut, lutCoord(tileCeil.x + rCeil, tileCeil.y + gCeil, u_texRes)).rgb,
+                                          fract(sourceColor.r * rRange), fract(sourceColor.g * gRange)
+                                          );
+    
+    // Interpolate between the blue values
+    vec3 interpolation = mix(lutColorFB, lutColorCB, fract(sourceColor.b * bRange));
+    // Round Color Values to prevent that for ex. 254.999999 is cut to 254 instead of 255.
+    // interpolation = floor(interpolation * 255. + 0.5) / 255.
+    
+    // Mix the intensity
+    return mix(inputColor, vec4(interpolation.rgb, sourceColor.a), u_intensity);
+}

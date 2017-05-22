@@ -1,7 +1,0 @@
-framework module imglyKit {
-    umbrella header "imglyKit.h"
-
-    export *
-    module * { export * }
-}
-module imglyKit.Swift { header "imglyKit-Swift.h" }

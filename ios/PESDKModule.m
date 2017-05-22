@@ -8,9 +8,9 @@
 
 #import "PESDKModule.h"
 #import <React/RCTUtils.h>
-#import <imglyKit/imglyKit.h>
+#import <PhotoEditorSDK/PhotoEditorSDK.h>
 
-@interface PESDKModule () <IMGLYPhotoEditViewControllerDelegate>
+@interface PESDKModule () <PESDKPhotoEditViewControllerDelegate>
 @end
 
 @implementation PESDKModule
@@ -18,8 +18,8 @@
 RCT_EXPORT_MODULE(PESDK);
 
 RCT_EXPORT_METHOD(present:(NSString *)path) {
-  IMGLYToolbarController *toolbarController = [IMGLYToolbarController new];
-  IMGLYPhotoEditViewController *photoEditViewController = [[IMGLYPhotoEditViewController alloc] initWithData:[NSData dataWithContentsOfFile:path]];
+  PESDKToolbarController *toolbarController = [PESDKToolbarController new];
+  PESDKPhotoEditViewController *photoEditViewController = [[PESDKPhotoEditViewController alloc] initWithData:[NSData dataWithContentsOfFile:path]];
   photoEditViewController.delegate = self;
   UIViewController *currentViewController = RCTPresentedViewController();
 
@@ -31,16 +31,16 @@ RCT_EXPORT_METHOD(present:(NSString *)path) {
 
 #pragma mark - IMGLYPhotoEditViewControllerDelegate
 
-- (void)photoEditViewController:(IMGLYPhotoEditViewController *)photoEditViewController didSaveImage:(UIImage *)image imageAsData:(NSData *)data {
+- (void)photoEditViewController:(PESDKPhotoEditViewController *)photoEditViewController didSaveImage:(UIImage *)image imageAsData:(NSData *)data {
   [self sendEventWithName:@"PhotoEditorDidSave" body:@{ @"image": UIImageJPEGRepresentation(image, 1.0), @"data": data }];
 }
 
-- (void)photoEditViewControllerDidCancel:(IMGLYPhotoEditViewController *)photoEditViewController {
+- (void)photoEditViewControllerDidCancel:(PESDKPhotoEditViewController *)photoEditViewController {
   [photoEditViewController.toolbarController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
   [self sendEventWithName:@"PhotoEditorDidCancel" body:@{}];
 }
 
-- (void)photoEditViewControllerDidFailToGeneratePhoto:(IMGLYPhotoEditViewController *)photoEditViewController {
+- (void)photoEditViewControllerDidFailToGeneratePhoto:(PESDKPhotoEditViewController *)photoEditViewController {
   [self sendEventWithName:@"PhotoEditorDidFailToGeneratePhoto" body:@{}];
 }
 

@@ -12,7 +12,7 @@
 #import "RCCManager.h"
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-#import <imglyKit/imglyKit.h>
+#import <PhotoEditorSDK/PhotoEditorSDK.h>
 
 @implementation AppDelegate
 

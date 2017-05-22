@@ -1,0 +1,42 @@
+kernel vec4 coreImageKernel(sampler u_image, vec2 u_pixelDimension, float u_clarity, vec4 c0, vec4 c1, vec4 c2, vec4 c3, vec4 bias) {
+    vec2 pixelCoord = samplerCoord(u_image);
+    vec4 color =  clamp(sample(u_image, samplerCoord(u_image)), 0.0, 1.0);
+    vec4 blurredColor = color;
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2(-u_pixelDimension.x, -u_pixelDimension.y)), 0.0, 1.0);
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2(-u_pixelDimension.x,                 0.0)), 0.0, 1.0);
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2(-u_pixelDimension.x,  u_pixelDimension.y)), 0.0, 1.0);
+
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2(                0.0, -u_pixelDimension.y)), 0.0, 1.0);
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2(                0.0,  u_pixelDimension.y)), 0.0, 1.0);
+
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2( u_pixelDimension.x, -u_pixelDimension.y)), 0.0, 1.0);
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2( u_pixelDimension.x,                 0.0)), 0.0, 1.0);
+    blurredColor += clamp(sample(u_image, pixelCoord + vec2( u_pixelDimension.x,  u_pixelDimension.y)), 0.0, 1.0);
+
+    blurredColor /= 9.0;
+
+    float originalGray = clamp(color.r * 0.3
+    + color.g * 0.59
+    + color.b * 0.1, 0.111111, 0.9999999); // 1.0 and 0.0 result in white not black
+    // therefore we clamp
+
+    // Here we create a function that will map values below 0.1 to 0. Values above 0.2 will be mapped to 1,
+    // and for values between 0.1 and 0.2 it will produce a gradient.
+    // The funtion is mirror at 0.5, meaning values between 0.8 and 0.9 will result in a decending gradient.
+    // And values above 0.9 will be mapped to 0.
+    float frequenceFactor = min(smoothstep(1.0 - originalGray, 0.0, 0.11),smoothstep(originalGray, 0.0, 0.11));
+
+    // here we apply the high pass filter. Its strength is determined by the uniform ,
+    // and the frequence factor. That means the only the mid tones are affected by this filter.
+    // Clarity input is ranging from -1 to 1. But we want to strengthen the effect.
+    // Therefore we see this little magic number '3.7'.
+    color = clamp(color + clamp((color - blurredColor) * u_clarity * 3.7 * frequenceFactor, 0.0, 10.0), 0.0, 1.0);
+
+    // apply exposure but only to the mid tones.
+    color.rgb = color.rgb * pow(2.0, u_clarity * 0.27 * frequenceFactor);
+
+    // apply contrast and desaturation matrix
+    color = clamp(vec4(dot(color,c0), dot(color,c1), dot(color,c2), dot(color,c3)) + bias, 0.0, 1.0);
+    color.rgb *= color.a;
+    return color;
+}

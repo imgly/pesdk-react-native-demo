@@ -40,8 +40,8 @@
 		E92424721E715AD300886182 /* PESDKModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E92424711E715AD300886182 /* PESDKModule.m */; };
 		E929371C1E7ADB4F006BA667 /* LICENSE_IOS in Resources */ = {isa = PBXBuildFile; fileRef = E929371B1E7ADB4F006BA667 /* LICENSE_IOS */; };
 		E9A8DDE81E72A8E1007CFE18 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A8DDE71E72A8CA007CFE18 /* libRNFS.a */; };
-		E9CD39DB1E7692F900FCF2C4 /* imglyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9CD39DA1E7692F900FCF2C4 /* imglyKit.framework */; };
-		E9CD39DC1E7692F900FCF2C4 /* imglyKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9CD39DA1E7692F900FCF2C4 /* imglyKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E9E528581ED2FA32004BA7C6 /* PhotoEditorSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E528571ED2FA32004BA7C6 /* PhotoEditorSDK.framework */; };
+		E9E528591ED2FA32004BA7C6 /* PhotoEditorSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E9E528571ED2FA32004BA7C6 /* PhotoEditorSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,13 +251,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E99875611E70409100F26759 /* Embed Frameworks */ = {
+		E9E5285A1ED2FA32004BA7C6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9CD39DC1E7692F900FCF2C4 /* imglyKit.framework in Embed Frameworks */,
+				E9E528591ED2FA32004BA7C6 /* PhotoEditorSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +294,7 @@
 		E92424711E715AD300886182 /* PESDKModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PESDKModule.m; sourceTree = "<group>"; };
 		E929371B1E7ADB4F006BA667 /* LICENSE_IOS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE_IOS; sourceTree = "<group>"; };
 		E9A8DDC81E72A8C9007CFE18 /* RNFS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFS.xcodeproj; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; };
-		E9CD39DA1E7692F900FCF2C4 /* imglyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = imglyKit.framework; sourceTree = "<group>"; };
+		E9E528571ED2FA32004BA7C6 /* PhotoEditorSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PhotoEditorSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,12 +310,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9CD39DB1E7692F900FCF2C4 /* imglyKit.framework in Frameworks */,
 				E9A8DDE81E72A8E1007CFE18 /* libRNFS.a in Frameworks */,
 				E90761FF1E703267002DCA73 /* libReactNativeNavigation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
+				E9E528581ED2FA32004BA7C6 /* PhotoEditorSDK.framework in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
@@ -512,7 +512,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				E9CD39DA1E7692F900FCF2C4 /* imglyKit.framework */,
+				E9E528571ED2FA32004BA7C6 /* PhotoEditorSDK.framework */,
 				13B07FAE1A68108700A75B9A /* PESDKDemo */,
 				00E356EF1AD99517003FC87E /* PESDKDemoTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
@@ -577,8 +577,8 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				E99875611E70409100F26759 /* Embed Frameworks */,
-				E99875621E70409C00F26759 /* Prepare imglyKit */,
+				E9E5285A1ED2FA32004BA7C6 /* Embed Frameworks */,
+				E99875621E70409C00F26759 /* Prepare PhotoEditor SDK */,
 			);
 			buildRules = (
 			);
@@ -985,19 +985,19 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";
 		};
-		E99875621E70409C00F26759 /* Prepare imglyKit */ = {
+		E99875621E70409C00F26759 /* Prepare PhotoEditor SDK */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Prepare imglyKit";
+			name = "Prepare PhotoEditor SDK";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "bash \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/imglyKit.framework/strip-framework.sh\"";
+			shellScript = "bash \"$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/PhotoEditorSDK.framework/strip-framework.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

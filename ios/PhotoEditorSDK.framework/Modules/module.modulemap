@@ -1,0 +1,10 @@
+framework module PhotoEditorSDK {
+    umbrella header "PhotoEditorSDK.h"
+
+    export *
+    module * { export * }
+}
+
+module PhotoEditorSDK.Swift {
+    header "PhotoEditorSDK-Swift.h"
+}

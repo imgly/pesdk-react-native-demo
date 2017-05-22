@@ -1,0 +1,66 @@
+kernel vec4 coreImageKernel(__sampler image, __sampler lut, float u_intensity, float u_hTileCount, float u_vTileCount, float u_texRes)
+{
+    vec4 inputColor = clamp(sample(image, samplerCoord(image)), 0.0, 1.0);
+    vec4 sourceColor = inputColor;
+    float rRange = floor(u_texRes / u_hTileCount - 1.0);
+    float gRange = floor(u_texRes / u_vTileCount - 1.0);
+    float bRange = floor(u_hTileCount * u_hTileCount - 1.0);
+
+    int rFloor = int(sourceColor.r * rRange);
+    int gFloor = int(sourceColor.g * gRange);
+    int bFloor = int(sourceColor.b * bRange);
+
+    int rCeil = int(ceil(sourceColor.r * rRange));
+    int gCeil = int(ceil(sourceColor.g * gRange));
+    int bCeil = int(ceil(sourceColor.b * bRange));
+
+    ivec2 tileFloor; // Blue tile index
+    tileFloor.y = bFloor / int(u_hTileCount);
+    tileFloor.x = bFloor - (tileFloor.y * int(u_hTileCount));
+
+    ivec2 tileCeil; // Blue tile index
+    tileCeil.y = bCeil / int(u_hTileCount);
+    tileCeil.x = bCeil - (tileCeil.y * int(u_hTileCount));
+
+    // Map tile index to tile pixel pos.
+    tileFloor *= int(u_texRes / u_hTileCount);
+    tileCeil  *= int(u_texRes / u_vTileCount);
+    float redFract = fract(sourceColor.r * rRange);
+    float greenFract = fract(sourceColor.g * gRange);
+
+    // Interpolate between red and green
+    vec2 lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileFloor.x + rFloor), float(tileFloor.y + gFloor)) / u_texRes;
+    vec3 cRfGf = sample(lut, lutCoord).rgb;
+
+    lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileFloor.x + rFloor), float(tileFloor.y + gCeil)) / u_texRes;
+    vec3 cRfGc = sample(lut, lutCoord).rgb;
+
+    lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileFloor.x + rCeil), float(tileFloor.y + gFloor)) / u_texRes;
+    vec3 cRcGf = sample(lut, lutCoord).rgb;
+
+    lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileFloor.x + rCeil), float(tileFloor.y + gCeil)) / u_texRes;
+    vec3 cRcGc = sample(lut, lutCoord).rgb;
+    vec3 lutColorFB =  mix(mix(cRfGf, cRcGf, redFract), mix(cRfGc, cRcGc, redFract), greenFract);
+
+    // --------------------------------------------------------------------------------------------------
+    lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileCeil.x + rFloor), float(tileCeil.y + gFloor)) / u_texRes;
+    cRfGf = sample(lut, lutCoord).rgb;
+
+    lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileCeil.x + rFloor), float(tileCeil.y + gCeil)) / u_texRes;
+    cRfGc = sample(lut, lutCoord).rgb;
+
+    lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileCeil.x + rCeil), float(tileCeil.y + gFloor)) / u_texRes;
+    cRcGf = sample(lut, lutCoord).rgb;
+
+    lutCoord = vec2(0.5 / u_texRes) + vec2(float(tileCeil.x + rCeil), float(tileCeil.y + gCeil)) / u_texRes;
+    cRcGc = sample(lut, lutCoord).rgb;
+    vec3 lutColorCB =  mix(mix(cRfGf, cRcGf, redFract), mix(cRfGc, cRcGc, redFract), greenFract);
+
+    // Interpolate between the blue values
+    vec3 interpolation = mix(lutColorFB, lutColorCB, fract(sourceColor.b * bRange));
+    // Round Color Values to prevent that for ex. 254.999999 is cut to 254 instead of 255.
+    // interpolation = floor(interpolation * 255. + 0.5) / 255.
+    
+    // Mix the intensity
+    return mix(inputColor, vec4(interpolation.rgb, sourceColor.a), u_intensity);
+}
