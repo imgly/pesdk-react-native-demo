@@ -87,7 +87,7 @@ android {
     buildToolsVersion "25.0.2"
 
     defaultConfig {
-        applicationId "com.photoeditorsdk.react.native.demo"
+        applicationId "com.photoeditorsdk.react_native.demo"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
@@ -138,7 +138,7 @@ dependencies {
     compile "com.facebook.react:react-native:+"  // From node_modules
     compile project(':react-native-navigation')
     compile project(':react-native-fs')
-    compile 'ly.img.android:photo-editor-sdk:3.1.1'
+    compile 'ly.img.android:photo-editor-sdk:4.1.2'
 }
 
 // Run this once to be able to run the application with BUCK

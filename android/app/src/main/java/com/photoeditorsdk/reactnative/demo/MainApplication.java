@@ -1,4 +1,4 @@
-package com.pesdkdemo;
+package com.photoeditorsdk.react_native.demo;
 
 import android.support.annotation.NonNull;
 
