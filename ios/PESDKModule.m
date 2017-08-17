@@ -32,12 +32,15 @@ RCT_EXPORT_METHOD(present:(NSString *)path) {
 #pragma mark - IMGLYPhotoEditViewControllerDelegate
 
 - (void)photoEditViewController:(PESDKPhotoEditViewController *)photoEditViewController didSaveImage:(UIImage *)image imageAsData:(NSData *)data {
-  [self sendEventWithName:@"PhotoEditorDidSave" body:@{ @"image": UIImageJPEGRepresentation(image, 1.0), @"data": data }];
+  [photoEditViewController.toolbarController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+    [self sendEventWithName:@"PhotoEditorDidSave" body:@{ @"image": UIImageJPEGRepresentation(image, 1.0), @"data": data }];
+  }];
 }
 
 - (void)photoEditViewControllerDidCancel:(PESDKPhotoEditViewController *)photoEditViewController {
-  [photoEditViewController.toolbarController.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
-  [self sendEventWithName:@"PhotoEditorDidCancel" body:@{}];
+  [photoEditViewController.toolbarController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+    [self sendEventWithName:@"PhotoEditorDidCancel" body:@{}];
+  }];
 }
 
 - (void)photoEditViewControllerDidFailToGeneratePhoto:(PESDKPhotoEditViewController *)photoEditViewController {

@@ -9,7 +9,8 @@ import {
   Dimensions, 
   Platform, 
   NativeModules, 
-  NativeEventEmitter 
+  NativeEventEmitter,
+  Alert 
 } from 'react-native'
 
 const PESDK = NativeModules.PESDK
@@ -118,13 +119,28 @@ export default class PESDKDemo extends Component {
     this.eventEmitter = new NativeEventEmitter(NativeModules.PESDK);
     this.eventEmitter.addListener('PhotoEditorDidCancel', () => {
       // The photo editor was cancelled.
+      Alert.alert(
+        'PESDK did Cancel', 
+        '...do what you need to do.',
+        { cancelable: true }
+      )
     })
     this.eventEmitter.addListener('PhotoEditorDidSave', (body) => {
       // The body contains the edited image in JPEG and NSData representation and
       // one could further process it from here. 
+      Alert.alert(
+        'PESDK did Save', 
+        'Image is contained in body and may be processed further.',
+        { cancelable: false }
+      )
     })
     this.eventEmitter.addListener('PhotoEditorDidFailToGeneratePhoto', () => {
       // The photo editor could not create a photo.
+      Alert.alert(
+        'PESDK did Fail to generate a photo.', 
+        'Please try again.',
+        { cancelable: true }
+      )
     })
   }
 

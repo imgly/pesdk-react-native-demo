@@ -8,7 +8,7 @@ This project shows how to easily integrate the [PhotoEditor SDK](https://www.pho
 **THIS IS A DEMO**. This repository is not meant as a fully fledged React Native plugin, but as a base for further development instead. For more details, check the [accompanying blog post](https://blog.photoeditorsdk.com/photoeditor-sdk-react-native-15179c589a55#.s6c81ua7w).
 
 ## Example App
-The included example app demonstrates how to open the PhotoEditor SDK's editor with an image that has previously been downloaded using React Native. One can then edit the image using our editor and save it to disk or share using iOS' native share sheet.
+The included example app demonstrates how to open the PhotoEditor SDK's editor with an image that has previously been downloaded using React Native. Upon closing the editor, the edited image is returned to React Native and may be processed further, presented ot the user etc. This demo simply shows an alert to give you a hint on how to move on.
 
 Use React Natives `react-native run-ios` and `run-android` to launch the emulators.
 
