@@ -15,5 +15,6 @@ FOUNDATION_EXPORT double PhotoEditorSDKVersionNumber;
 //! Project version string for PhotoEditorSDK.
 FOUNDATION_EXPORT const unsigned char PhotoEditorSDKVersionString[];
 
-#import "PESDKRenderMode.h"
-#import "PESDKAnalyticsConstants.h"
+#import "RenderMode.h"
+#import "AnalyticsConstants.h"
+

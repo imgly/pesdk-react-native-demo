@@ -1,0 +1,10 @@
+kernel vec4 coreImageKernel(sampler image, vec4 tintColor)
+{
+vec2 pixelCoord = samplerCoord(image);
+vec4 color = sample(image, pixelCoord);
+color.rgb /= max(color.a, 0.00001);
+color.rgb = tintColor.rgb;
+color.rgb *= color.a;
+color.a *= tintColor.a;
+return color;
+}

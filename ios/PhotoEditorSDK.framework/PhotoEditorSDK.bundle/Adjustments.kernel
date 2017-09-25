@@ -58,6 +58,6 @@ kernel vec4 coreImageKernel(sampler image, float u_shadows, float u_highlights, 
     // Apply Color Matrix
     color.rgb /= max(color.a, 0.00001);
     color = clamp(vec4(dot(color,c0), dot(color,c1), dot(color,c2), dot(color,c3)) + bias, 0.0, 1.0);
-    color.rgb *= color.a;
+      
     return color;
 }

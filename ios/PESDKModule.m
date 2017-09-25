@@ -18,27 +18,25 @@
 RCT_EXPORT_MODULE(PESDK);
 
 RCT_EXPORT_METHOD(present:(NSString *)path) {
-  PESDKToolbarController *toolbarController = [PESDKToolbarController new];
-  PESDKPhotoEditViewController *photoEditViewController = [[PESDKPhotoEditViewController alloc] initWithData:[NSData dataWithContentsOfFile:path]];
-  photoEditViewController.delegate = self;
+  PESDKPhotoEditViewController *photoEditViewController = [[PESDKPhotoEditViewController alloc] initWithData:[NSData dataWithContentsOfFile:path] configuration:[[PESDKConfiguration alloc] init]];
+    photoEditViewController.delegate = self;
   UIViewController *currentViewController = RCTPresentedViewController();
 
   dispatch_async(dispatch_get_main_queue(), ^{
-    [toolbarController pushViewController:photoEditViewController animated:NO completion:NULL];
-    [currentViewController presentViewController:toolbarController animated:YES completion:NULL];
+    [currentViewController presentViewController:photoEditViewController animated:YES completion:NULL];
   });
 }
 
 #pragma mark - IMGLYPhotoEditViewControllerDelegate
 
 - (void)photoEditViewController:(PESDKPhotoEditViewController *)photoEditViewController didSaveImage:(UIImage *)image imageAsData:(NSData *)data {
-  [photoEditViewController.toolbarController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+  [photoEditViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
     [self sendEventWithName:@"PhotoEditorDidSave" body:@{ @"image": UIImageJPEGRepresentation(image, 1.0), @"data": data }];
   }];
 }
 
 - (void)photoEditViewControllerDidCancel:(PESDKPhotoEditViewController *)photoEditViewController {
-  [photoEditViewController.toolbarController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+  [photoEditViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
     [self sendEventWithName:@"PhotoEditorDidCancel" body:@{}];
   }];
 }

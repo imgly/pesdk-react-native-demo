@@ -1,8 +1,11 @@
-kernel vec4 coreImageKernel(__sampler image, vec4 tintColor)
+kernel vec4 coreImageKernel(sampler image, vec4 tintColor)
 {
-    vec2 u_pixelDimension = vec2(1.0, 1.0);
-    vec2 pixelCoord = samplerCoord(image);
-    vec4 color = clamp(sample(image, pixelCoord), 0.0, 1.0);
-    float gray = color.r * 0.3 + color.g * 0.59 + color.b * 0.11;
-    return vec4(vec3(gray) * tintColor.rgb, color.a * tintColor.a);
+  vec2 pixelCoord = samplerCoord(image);
+  vec4 color = sample(image, pixelCoord);
+  color.rgb /= max(color.a, 0.00001);
+  float gray = color.r * 0.3 + color.g * 0.59 + color.b * 0.11;
+  color.rgb = vec3(gray) * tintColor.rgb;
+  color.rgb *= color.a;
+  color.a *= tintColor.a;
+  return color;
 }
