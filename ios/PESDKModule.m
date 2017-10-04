@@ -31,7 +31,7 @@ RCT_EXPORT_METHOD(present:(NSString *)path) {
 
 - (void)photoEditViewController:(PESDKPhotoEditViewController *)photoEditViewController didSaveImage:(UIImage *)image imageAsData:(NSData *)data {
   [photoEditViewController.presentingViewController dismissViewControllerAnimated:YES completion:^{
-    [self sendEventWithName:@"PhotoEditorDidSave" body:@{ @"image": UIImageJPEGRepresentation(image, 1.0), @"data": data }];
+    [self sendEventWithName:@"PhotoEditorDidSave" body:@{ @"image": [UIImageJPEGRepresentation(image, 1.0) base64EncodedStringWithOptions: 0], @"data": [data base64EncodedStringWithOptions:0] }];
   }];
 }
 
