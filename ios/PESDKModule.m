@@ -18,11 +18,11 @@
 RCT_EXPORT_MODULE(PESDK);
 
 RCT_EXPORT_METHOD(present:(NSString *)path) {
-  PESDKPhotoEditViewController *photoEditViewController = [[PESDKPhotoEditViewController alloc] initWithData:[NSData dataWithContentsOfFile:path] configuration:[[PESDKConfiguration alloc] init]];
-    photoEditViewController.delegate = self;
-  UIViewController *currentViewController = RCTPresentedViewController();
-
   dispatch_async(dispatch_get_main_queue(), ^{
+    PESDKPhotoEditViewController *photoEditViewController = [[PESDKPhotoEditViewController alloc] initWithData:[NSData dataWithContentsOfFile:path] configuration:[[PESDKConfiguration alloc] init]];
+    photoEditViewController.delegate = self;
+
+    UIViewController *currentViewController = RCTPresentedViewController();
     [currentViewController presentViewController:photoEditViewController animated:YES completion:NULL];
   });
 }
