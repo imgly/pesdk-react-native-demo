@@ -1,0 +1,7 @@
+kernel vec4 coreImageKernel(sampler image, sampler overlay, float intensity)
+{
+vec4 imageColor = sample(image, samplerCoord(image));
+vec4 overlayColor = sample(overlay, samplerCoord(overlay));
+vec3 result = imageColor.rgb * overlayColor.rgb;
+return mix(imageColor, vec4(result, imageColor.a), intensity * overlayColor.a);
+}

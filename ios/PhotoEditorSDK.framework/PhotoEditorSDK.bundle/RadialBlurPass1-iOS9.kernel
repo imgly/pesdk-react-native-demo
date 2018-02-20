@@ -1,9 +1,5 @@
 kernel vec4 coreImageKernel(__sampler image1,
                             vec4 args1, vec4 args2) {
-//  float u_blurRadius = args1.x;
-//  float u_gradientSize  = args1.y;
-//  float u_size  = args1.z;
-//  float blurSteps = args1.w;
   vec2 u_position = args2.xy;
   vec2 u_delta = vec2(0.5, 0.5);
   vec4 color = vec4(0.0);
@@ -24,7 +20,7 @@ kernel vec4 coreImageKernel(__sampler image1,
 
     vec4 samplePix = sample(image1, samplerTransform(image1, destCoord() + u_delta * percent * radius));
     weight = (1.0 - abs(percent));
-    color += vec4(samplePix.rgb * weight * samplePix.a, samplePix.a * weight);
+    color += samplePix * weight;
     total += weight;
   }
   

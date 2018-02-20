@@ -1,0 +1,10 @@
+kernel vec4 coreImageKernel(sampler image, vec4 c0, vec4 c1, vec4 c2, vec4 c3, vec4 bias) {
+  vec4 color = clamp(sample(image, samplerCoord(image)), 0.0, 1.0);
+
+  // Apply Color Matrix
+  color.rgb /= max(color.a, 0.00001);
+  color = clamp(vec4(dot(color,c0), dot(color,c1), dot(color,c2), dot(color,c3)) + bias, 0.0, 1.0);
+  color.rgb *= color.a;
+
+  return color;
+}
