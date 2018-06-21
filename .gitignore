@@ -58,3 +58,4 @@ node_modules
 
 /third-party
 /ios/build
+/ios/PhotoEditorSDK.framework
