@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
-import { 
-  ListView, 
-  StyleSheet, 
-  TouchableHighlight, 
-  View, 
-  Text, 
-  Image, 
-  Dimensions, 
-  Platform, 
-  NativeModules, 
+import {
+  ListView,
+  StyleSheet,
+  TouchableHighlight,
+  View,
+  Text,
+  Image,
+  Dimensions,
+  Platform,
+  NativeModules,
   NativeEventEmitter,
-  Alert 
+  Alert
 } from 'react-native'
 
 const PESDK = NativeModules.PESDK
@@ -120,16 +120,16 @@ export default class PESDKDemo extends Component {
     this.eventEmitter.addListener('PhotoEditorDidCancel', () => {
       // The photo editor was cancelled.
       Alert.alert(
-        'PESDK did Cancel', 
+        'PESDK did Cancel',
         '...do what you need to do.',
         { cancelable: true }
       )
     })
     this.eventEmitter.addListener('PhotoEditorDidSave', (body) => {
       // The body contains the edited image in JPEG and NSData representation and
-      // one could further process it from here. 
+      // one could further process it from here.
       Alert.alert(
-        'PESDK did Save', 
+        'PESDK did Save',
         'Image is contained in body and may be processed further.',
         { cancelable: false }
       )
@@ -137,7 +137,7 @@ export default class PESDKDemo extends Component {
     this.eventEmitter.addListener('PhotoEditorDidFailToGeneratePhoto', () => {
       // The photo editor could not create a photo.
       Alert.alert(
-        'PESDK did Fail to generate a photo.', 
+        'PESDK did Fail to generate a photo.',
         'Please try again.',
         { cancelable: true }
       )
