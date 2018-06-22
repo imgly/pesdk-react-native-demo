@@ -1,19 +1,30 @@
 package com.pesdk;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.facebook.react.bridge.ActivityEventListener;
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.BaseActivityEventListener;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableMap;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.modules.core.DeviceEventManagerModule;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import ly.img.android.sdk.models.constant.Directory;
 import ly.img.android.sdk.models.state.EditorLoadSettings;
 import ly.img.android.sdk.models.state.EditorSaveSettings;
 import ly.img.android.sdk.models.state.manager.SettingsList;
+import ly.img.android.ui.activities.ImgLyIntent;
 import ly.img.android.ui.activities.PhotoEditorBuilder;
 
 /**
@@ -22,9 +33,12 @@ import ly.img.android.ui.activities.PhotoEditorBuilder;
 
 public class PESDKModule extends ReactContextBaseJavaModule {
 
-    public static int PESDK_EDITOR_RESULT = 1;
+    public static final int PESDK_EDITOR_RESULT = 1;
+    private ReactApplicationContext mReactContext;
     public PESDKModule(ReactApplicationContext reactContext) {
         super(reactContext);
+        reactContext.addActivityEventListener(mActivityEventListener);
+        this.mReactContext = reactContext;
     }
 
     @Override
@@ -51,4 +65,28 @@ public class PESDKModule extends ReactContextBaseJavaModule {
                     .startActivityForResult(getCurrentActivity(), PESDK_EDITOR_RESULT);
         }
     }
+
+    // Listen for onActivityResult
+    private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
+        @Override
+        public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
+            switch (requestCode) {
+                case PESDK_EDITOR_RESULT: {
+                    switch (resultCode) {
+                        case Activity.RESULT_CANCELED:
+                            // Notify about cancellation
+                            mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("PhotoEditorDidCancel", null);
+                            break;
+                        case Activity.RESULT_OK:
+                            String resultPath = data.getStringExtra(ImgLyIntent.RESULT_IMAGE_PATH);
+                            WritableMap payload = Arguments.createMap();
+                            payload.putString("path", resultPath);
+                            mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("PhotoEditorDidSave", payload);
+                            break;
+                    }
+                    break;
+                }
+            }
+        }
+    };
 }
