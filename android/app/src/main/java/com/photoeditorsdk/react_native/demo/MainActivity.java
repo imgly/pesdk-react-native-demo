@@ -1,4 +1,4 @@
-package com.photoeditorsdk.demo;
+package com.photoeditorsdk.react_native.demo;
 
 import com.facebook.react.ReactActivity;
 import com.rnfs.RNFSPackage;

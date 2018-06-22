@@ -73,15 +73,17 @@ public class PESDKModule extends ReactContextBaseJavaModule {
             switch (requestCode) {
                 case PESDK_EDITOR_RESULT: {
                     switch (resultCode) {
+                        // TODO:
+                        // This currently yields JavaScript errors due to a slice
+                        // call somewhere within React.
                         case Activity.RESULT_CANCELED:
-                            // Notify about cancellation
-                            mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("PhotoEditorDidCancel", null);
+                            // mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("PhotoEditorDidCancel", null);
                             break;
                         case Activity.RESULT_OK:
                             String resultPath = data.getStringExtra(ImgLyIntent.RESULT_IMAGE_PATH);
                             WritableMap payload = Arguments.createMap();
                             payload.putString("path", resultPath);
-                            mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("PhotoEditorDidSave", payload);
+                            // mReactContext.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("PhotoEditorDidSave", payload);
                             break;
                     }
                     break;

@@ -1,4 +1,4 @@
-package com.photoeditorsdk.demo;
+package com.photoeditorsdk.react_native.demo;
 
 import android.app.Application;
 

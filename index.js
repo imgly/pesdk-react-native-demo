@@ -118,6 +118,7 @@ export default class PESDKDemo extends Component {
   componentWillMount() {
     this.eventEmitter = new NativeEventEmitter(NativeModules.PESDK);
     this.eventEmitter.addListener('PhotoEditorDidCancel', () => {
+      console.log('Cancelled')
       // The photo editor was cancelled.
       Alert.alert(
         'PESDK did Cancel',
@@ -128,6 +129,7 @@ export default class PESDKDemo extends Component {
     this.eventEmitter.addListener('PhotoEditorDidSave', (body) => {
       // The body contains the edited image in JPEG and NSData representation and
       // one could further process it from here.
+      console.log('Saved')
       Alert.alert(
         'PESDK did Save',
         'Image is contained in body and may be processed further.',
