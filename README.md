@@ -28,6 +28,29 @@ PESDK.init(this, "LICENSE_FILENAME")
 
 You'll need to [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) and refer to [our documentation](https://docs.photoeditorsdk.com?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) for more details. Please see `LICENSE.md` for licensing details.
 
+As the Android SDK links different modules depending on your configuration, we're providing a Gradle plugin which needs to be added to your Android project. To prepare this, you'll have to add the following lines to your projects .gradle file (`android/build.gradle`):
+
+ ```
+ buildscript {
+     repositories {
+         // ...
+         maven { url "https://artifactory.9elements.com/artifactory/imgly" }
+     }
+     dependencies {
+         // ...
+         classpath 'ly.img.android.pesdk:plugin:6.0.0'
+     }
+ }
+
+ allprojects {
+     repositories {
+         // ...
+         maven { url "https://artifactory.9elements.com/artifactory/imgly" }
+     }
+     // ...
+ }
+ ```
+
 ## PhotoEditor SDK for iOS & Android
 The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
 
