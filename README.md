@@ -13,7 +13,7 @@ The included example app demonstrates how to open the PhotoEditor SDK's editor w
 Use React Natives `react-native run-ios` and `run-android` to launch the emulators.
 
 ## Note
-The PhotoEditor SDK is a product of 9elements GmbH. 
+The PhotoEditor SDK is a product of img.ly GmbH. 
 To use the PhotoEditor SDK within your app **you'll need to load a license file**:
 
 ```swift
@@ -58,7 +58,7 @@ The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_
 Please see [LICENSE](https://github.com/imgly/pesdk-react-native-demo/blob/master/LICENSE.md) for licensing details.
 
 ## Authors and Contributors
-Made 2013-2017 by @9elements
+Made 2013-2019 by img.ly
 
 ## Support or Contact
 Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://www.photoeditorsdk.com/pricing) on our website.
