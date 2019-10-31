@@ -61,6 +61,6 @@ Please see [LICENSE](https://github.com/imgly/pesdk-react-native-demo/blob/maste
 Made 2013-2019 by img.ly
 
 ## Support or Contact
-Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://www.photoeditorsdk.com/pricing) on our website.
+Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) on our website.
 
 
