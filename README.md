@@ -1,66 +1,41 @@
 <p align="center">
-  <img src="http://static.photoeditorsdk.com/logo.png" />
+  <a href="https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo">
+    <img src="http://static.photoeditorsdk.com/logo.png" alt="PhotoEditor SDK Logo"/>
+  </a>
 </p>
 
-# PhotoEditor SDK React Native Demo
-This project shows how to easily integrate the [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) into a React Native application. 
+# PhotoEditor SDK React Native Example App
+This project shows how to easily integrate [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) into a React Native application with the [React Native module for PhotoEditor SDK](https://github.com/imgly/pesdk-react-native) which is available via NPM as [`react-native-photoeditorsdk`](https://www.npmjs.com/package/react-native-photoeditorsdk).
 
-**THIS IS A DEMO**. This repository is not meant as a fully fledged React Native plugin, but as a base for further development instead. For more details, check the [accompanying blog post](https://blog.photoeditorsdk.com/photoeditor-sdk-react-native-15179c589a55#.s6c81ua7w).
+**Please note that the React Native module for PhotoEditor SDK currently supports iOS only. Android support will be part of the next major release.**
 
-## Example App
-The included example app demonstrates how to open the PhotoEditor SDK's editor with an image that has previously been downloaded using React Native. Upon closing the editor, the edited image is returned to React Native and may be processed further, presented ot the user etc. This demo simply shows an alert to give you a hint on how to move on.
+## Getting started
 
-Use React Natives `react-native run-ios` and `run-android` to launch the emulators.
+After cloning this repository, perform the following steps to run the example application:
 
-## Note
-The PhotoEditor SDK is a product of img.ly GmbH. 
-To use the PhotoEditor SDK within your app **you'll need to load a license file**:
-
-```swift
-// iOS
-PESDK.unlockWithLicense(at: licenseURL)
+```sh
+# install
+yarn install
+cd ios && pod install && cd .. # CocoaPods on iOS needs this extra step
+# run
+yarn react-native run-ios
 ```
 
-```java
-// Android
-PESDK.init(this, "LICENSE_FILENAME")
+## Unlock the SDK
+PhotoEditor SDK is a product of img.ly GmbH. Without unlocking, the SDK is fully functional but a watermark is added on top of the image preview and any exported images.
+In order to remove the watermark and to use PhotoEditor SDK within your app **you'll need to [request a license](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) and load a license file** in your [`App.js`](./App.js#L34-L35) with:
+
+```js
+PESDK.unlockWithLicense(require('./pesdk_license'));
 ```
-
-You'll need to [order a license](https://www.photoeditorsdk.com/pricing#contact/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) and refer to [our documentation](https://docs.photoeditorsdk.com?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) for more details. Please see `LICENSE.md` for licensing details.
-
-As the Android SDK links different modules depending on your configuration, we're providing a Gradle plugin which needs to be added to your Android project. To prepare this, you'll have to add the following lines to your projects .gradle file (`android/build.gradle`):
-
- ```
- buildscript {
-     repositories {
-         // ...
-         maven { url "https://artifactory.9elements.com/artifactory/imgly" }
-     }
-     dependencies {
-         // ...
-         classpath 'ly.img.android.pesdk:plugin:6.0.0'
-     }
- }
-
- allprojects {
-     repositories {
-         // ...
-         maven { url "https://artifactory.9elements.com/artifactory/imgly" }
-     }
-     // ...
- }
- ```
 
 ## PhotoEditor SDK for iOS & Android
-The [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) for iOS and Android are **fully customizable** photo editors which you can integrate into your React Native app within minutes.
+The React Native module for PhotoEditor SDK includes a rich set of most commonly used [configuration and customization options](https://github.com/imgly/pesdk-react-native/blob/master/configuration.ts) of PhotoEditor SDK for iOS and Android. The native frameworks provide **fully customizable** photo editors. Please refer to [our documentation](https://docs.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) for more details.
 
-## License
-Please see [LICENSE](https://github.com/imgly/pesdk-react-native-demo/blob/master/LICENSE.md) for licensing details.
+## License Terms
 
-## Authors and Contributors
-Made 2013-2019 by img.ly
+Make sure you have a [commercial license](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) for PhotoEditor SDK before releasing your app.
+A commercial license is required for any app or service that has any form of monetization: This includes free apps with in-app purchases or ad supported applications. Please contact us if you want to purchase the commercial license.
 
-## Support or Contact
-Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=Side_Projects&utm_content=React-Native-Demo) on our website.
-
-
+## Support and License
+Use our [service desk](http://support.photoeditorsdk.com) for bug reports or support requests. To request a commercial license, please use the [license request form](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) on our website.

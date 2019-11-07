@@ -1,10 +1,10 @@
-# Photo Editor Software Development Kit (SDK)
-## Master Software License Agreement
+# PhotoEditor SDK
+## Terms of Service
 
 
 ### 1. Subject Matter
 
-1.1 This Master Software License Agreement (together with any applicable Order Form the “__Agreement__”) governs all rights granted by Licensor to use and commercially exploit the Photo Editor Software Development Kit (the “__Software__”).
+1.1 These Terms of Service (together with any applicable Order Form the “__Agreement__”) governs all rights granted by Licensor to use and commercially exploit the PhotoEditor SDK (the “__Software__”).
 
 1.2 The Agreement is entered into by and between img.ly GmbH, Kortumstraße 68, 44787 Bochum, Germany (the “__Licensor__”) and the entity identified in the Order Form (the “__Licensee__”, together with Licensor the “__Parties__”) as of the effective date the Order Form is last signed on.
 
@@ -14,7 +14,7 @@
 
 2.1 An “__Order Form__” may either be executed (i) by the Parties upon individual negotiation or (ii) via an online order issued by Licensee via Licensor`s website at www.photoeditorsdk.com (the “__Website__”) that has been confirmed by Licensor. Online orders not confirmed within 14 days after issuance shall be considered denied.
 
-2.2 No rights shall be granted to Licensee by virtue of this Master Software License Agreement alone as such grant requires the execution of an Order Form making reference to this Master Software License Agreement.
+2.2 No rights shall be granted to Licensee by virtue of these Terms of Service alone as such grant requires the execution of an Order Form making reference to these Terms of Service.
 
 2.3 The Order Form shall specify the environment for the Software that shall be licensed by Licensee. The Software is currently available for integration in the following environments: (i) HTML5, (ii) iOS, (iii) Android and (iv) Server.
 
