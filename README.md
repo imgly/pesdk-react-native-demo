@@ -3,6 +3,14 @@
     <img src="http://static.photoeditorsdk.com/logo.png" alt="PhotoEditor SDK Logo"/>
   </a>
 </p>
+<p align="center">
+  <a href="https://npmjs.org/package/react-native-photoeditorsdk">
+    <img src="https://img.shields.io/npm/v/react-native-photoeditorsdk.svg" alt="NPM version">
+  </a>
+  <a href="http://twitter.com/PhotoEditorSDK">
+    <img src="https://img.shields.io/badge/twitter-@PhotoEditorSDK-blue.svg?style=flat" alt="Twitter">
+  </a>
+</p>
 
 # PhotoEditor SDK React Native Example App
 This project shows how to easily integrate [PhotoEditor SDK](https://www.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) into a React Native application with the [React Native module for PhotoEditor SDK](https://github.com/imgly/pesdk-react-native) which is available via NPM as [`react-native-photoeditorsdk`](https://www.npmjs.com/package/react-native-photoeditorsdk).
