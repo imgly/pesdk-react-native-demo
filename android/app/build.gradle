@@ -1,5 +1,33 @@
 apply plugin: "com.android.application"
 
+apply plugin: 'ly.img.android.sdk'
+apply plugin: 'kotlin-android'
+
+imglyConfig {
+    modules {
+        include 'ui:text'
+        include 'ui:focus'
+        include 'ui:frame'
+        include 'ui:brush'
+        include 'ui:filter'
+        include 'ui:sticker'
+        include 'ui:overlay'
+        include 'ui:transform'
+        include 'ui:adjustment'
+        include 'ui:text-design'
+        include 'ui:video-trim'
+
+        include 'backend:serializer'
+
+        include 'assets:font-basic'
+        include 'assets:frame-basic'
+        include 'assets:filter-basic'
+        include 'assets:overlay-basic'
+        include 'assets:sticker-shapes'
+        include 'assets:sticker-emoticons'
+    }
+}
+
 import com.android.build.OutputFile
 
 /**
