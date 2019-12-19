@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.4",
-    "react-native-photoeditorsdk": "^2.0.0"
+    "react-native-photoeditorsdk": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.0",
