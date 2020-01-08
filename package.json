@@ -11,17 +11,17 @@
   },
   "dependencies": {
     "react": "16.9.0",
-    "react-native": "0.61.4",
-    "react-native-photoeditorsdk": "^2.0.1"
+    "react-native": "0.61.5",
+    "react-native-photoeditorsdk": "^2.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.0",
-    "@babel/runtime": "^7.7.1",
-    "@react-native-community/eslint-config": "^0.0.5",
+    "@babel/core": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
+    "@react-native-community/eslint-config": "^0.0.6",
     "babel-jest": "^24.9.0",
-    "eslint": "^6.6.0",
+    "eslint": "^6.8.0",
     "jest": "^24.9.0",
-    "metro-react-native-babel-preset": "^0.57.0",
+    "metro-react-native-babel-preset": "^0.56.4",
     "react-test-renderer": "16.9.0"
   },
   "jest": {

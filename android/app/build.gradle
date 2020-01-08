@@ -3,6 +3,7 @@ apply plugin: "com.android.application"
 apply plugin: 'ly.img.android.sdk'
 apply plugin: 'kotlin-android'
 
+// Comment out the modules you don't need, to save size.
 imglyConfig {
     modules {
         include 'ui:text'
@@ -15,10 +16,11 @@ imglyConfig {
         include 'ui:transform'
         include 'ui:adjustment'
         include 'ui:text-design'
-        include 'ui:video-trim'
 
+        // This module is big, remove the serializer if you don't need that feature.
         include 'backend:serializer'
 
+        // Remove the asset packs you don't need, these are also big in size.
         include 'assets:font-basic'
         include 'assets:frame-basic'
         include 'assets:filter-basic'
@@ -226,13 +228,13 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
+apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
+
 android {
     defaultConfig {
         multiDexEnabled true
     }
 }
 dependencies {
-  implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
 }
-
-apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
