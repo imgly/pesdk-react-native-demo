@@ -220,7 +220,7 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
     - ReactCommon/jscallinvoker (= 0.61.5)
-  - RNPhotoEditorSDK (2.1.1):
+  - RNPhotoEditorSDK (2.1.2):
     - PhotoEditorSDK (~> 10.7)
     - React
     - React-RCTImage
@@ -345,7 +345,7 @@ SPEC CHECKSUMS:
   React-RCTText: 9ccc88273e9a3aacff5094d2175a605efa854dbe
   React-RCTVibration: a49a1f42bf8f5acf1c3e297097517c6b3af377ad
   ReactCommon: 198c7c8d3591f975e5431bec1b0b3b581aa1c5dd
-  RNPhotoEditorSDK: d03b662331590fc0a229a0de9dc6d800c2c34b68
+  RNPhotoEditorSDK: ba88e57603b8ff23707fc3692ecbc9b73c38d464
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
 PODFILE CHECKSUM: f3cfc6a17ab977d7714806484497ce709d6a02f3
