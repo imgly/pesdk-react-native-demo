@@ -43,6 +43,8 @@ PESDK.unlockWithLicense(require('./pesdk_license'));
 
 The React Native module for PhotoEditor SDK includes a rich set of most commonly used [configuration and customization options](https://github.com/imgly/pesdk-react-native/blob/master/configuration.ts) of PhotoEditor SDK for iOS and Android. The native frameworks provide **fully customizable** photo editors. Please refer to [our documentation](https://docs.photoeditorsdk.com/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) for more details.
 
+Native customization for iOS is demonstrated in the [`AppDelegate`](./ios/PESDKExample/AppDelegate.m#L20-L31) of the example application.
+
 ## License Terms
 
 Make sure you have a [commercial license](https://account.photoeditorsdk.com/pricing/?utm_campaign=Projects&utm_source=Github&utm_medium=PESDK&utm_content=React-Native-Demo) for PhotoEditor SDK before releasing your app.

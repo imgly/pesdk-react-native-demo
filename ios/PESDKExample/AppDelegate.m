@@ -11,10 +11,25 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 
+#import <RNPhotoEditorSDK/RNPhotoEditorSDK.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  // Configure and customize PhotoEditor SDK beyond the configuration options exposed to JavaScript
+  RNPhotoEditorSDK.configureWithBuilder = ^(PESDKConfigurationBuilder * _Nonnull builder) {
+    // Disable the color pipette for the text color selection tool
+    [builder configureTextColorToolController:^(PESDKTextColorToolControllerOptionsBuilder * _Nonnull options) {
+      NSMutableArray<PESDKColor *> *colors = [options.availableColors mutableCopy];
+      [colors removeObjectAtIndex:0]; // Remove first color item which is the color pipette
+      options.availableColors = colors;
+    }];
+  };
+  RNPhotoEditorSDK.willPresentPhotoEditViewController = ^(PESDKPhotoEditViewController * _Nonnull photoEditViewController) {
+    NSLog(@"willPresent: %@", photoEditViewController);
+  };
+
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                    moduleName:@"PESDKExample"
