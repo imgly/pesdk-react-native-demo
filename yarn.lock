@@ -5050,10 +5050,10 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-react-native-photoeditorsdk@^2.2.2:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.2.2.tgz#dac21c6bb06c7cb2871c0586c0ff3ee45ac18a74"
-  integrity sha512-meqM4sQyNQ1TDEhCezS48Tg8caHft89dTQTbTLcR7At/mBr35NKSir/1eEiED+2ARXjLN3IIqOxmsAeo1IqN8Q==
+react-native-photoeditorsdk@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.3.2.tgz#26df604c96b3d779260905d6cfd526da4427ad75"
+  integrity sha512-g4cKI3rPZsX1LOPxHE/CmplBPW/OSwsVgkSGw9s1/AFYnQUduJoW+wJLt3sTpsGdUlcvkBSuQCwxfxtJ6IfoWg==
 
 react-native@0.61.5:
   version "0.61.5"

@@ -7,6 +7,9 @@
   <a href="https://npmjs.org/package/react-native-photoeditorsdk">
     <img src="https://img.shields.io/npm/v/react-native-photoeditorsdk.svg" alt="NPM version">
   </a>
+  <a href="https://npmjs.org/package/react-native-photoeditorsdk">
+    <img src="https://img.shields.io/badge/platforms-android%20|%20ios-lightgrey.svg" alt="Platform support">
+  </a>
   <a href="http://twitter.com/PhotoEditorSDK">
     <img src="https://img.shields.io/badge/twitter-@PhotoEditorSDK-blue.svg?style=flat" alt="Twitter">
   </a>
