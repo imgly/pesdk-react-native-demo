@@ -67,12 +67,12 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - imglyKit (10.13.1)
+  - imglyKit (10.18.0)
   - OpenSSL-Universal (1.0.2.19):
     - OpenSSL-Universal/Static (= 1.0.2.19)
   - OpenSSL-Universal/Static (1.0.2.19)
-  - PhotoEditorSDK (10.13.1):
-    - imglyKit (= 10.13.1)
+  - PhotoEditorSDK (10.18.0):
+    - imglyKit (= 10.18.0)
   - RCTRequired (0.62.2)
   - RCTTypeSafety (0.62.2):
     - FBLazyVector (= 0.62.2)
@@ -295,8 +295,8 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RNPhotoEditorSDK (2.4.2):
-    - PhotoEditorSDK (~> 10.9)
+  - RNPhotoEditorSDK (2.5.0):
+    - PhotoEditorSDK (~> 10.18)
     - React
     - React-RCTImage
   - Yoga (1.14.0)
@@ -440,9 +440,9 @@ SPEC CHECKSUMS:
   FlipperKit: 6dc9b8f4ef60d9e5ded7f0264db299c91f18832e
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  imglyKit: e9aad13dd136e82d1a69cb7ee79e0169a2ccda53
+  imglyKit: 3af0704f6657dbe0ce1ff7c2f1e4c71d12a8d81b
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
-  PhotoEditorSDK: eba8c2e128c6679580ba82b2a063a0174f40903b
+  PhotoEditorSDK: 3741fb8c324efc2a2ebb46993f700b24ff4e88dd
   RCTRequired: cec6a34b3ac8a9915c37e7e4ad3aa74726ce4035
   RCTTypeSafety: 93006131180074cffa227a1075802c89a49dd4ce
   React: 29a8b1a02bd764fb7644ef04019270849b9a7ac3
@@ -462,7 +462,7 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RNPhotoEditorSDK: 6a0042fe3d988b8c2350bc2776df9540fb7683f5
+  RNPhotoEditorSDK: 985f356d246e78c4c65dbbdb55f721cda0887120
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

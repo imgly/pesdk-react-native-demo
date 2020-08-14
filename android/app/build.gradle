@@ -27,6 +27,8 @@ imglyConfig {
         include 'assets:overlay-basic'
         include 'assets:sticker-shapes'
         include 'assets:sticker-emoticons'
+
+        include 'backend:sticker-smart'
     }
 }
 

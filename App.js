@@ -27,7 +27,12 @@ import {
 
 import {PESDK, Configuration, TintMode} from 'react-native-photoeditorsdk';
 
-// Uncomment the following line to unlock PhotoEditor SDK with a license file
+/**
+ * Uncomment the following single line of code to unlock PhotoEditor SDK automatically
+ * for both platforms. Every platform requires a separate license file which must be
+ * named `pesdk_license.ios.json` for the iOS license and `pesdk_license.android.json`
+ * for the Android license file.
+ */
 // PESDK.unlockWithLicense(require('./pesdk_license'));
 
 const App: () => React$Node = () => {
