@@ -442,17 +442,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PESDKExample-PESDKExampleTests/Pods-PESDKExample-PESDKExampleTests-frameworks.sh",
-				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK/PhotoEditorSDK.framework",
-				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK/PhotoEditorSDK.framework.dSYM",
-				"${PODS_ROOT}/imglyKit/PhotoEditorSDK/ImglyKit.framework",
-				"${PODS_ROOT}/imglyKit/PhotoEditorSDK/ImglyKit.framework.dSYM",
+				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK.framework",
+				"${PODS_ROOT}/imglyKit/ImglyKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhotoEditorSDK.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/PhotoEditorSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImglyKit.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/ImglyKit.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,17 +462,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-PESDKExample/Pods-PESDKExample-frameworks.sh",
-				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK/PhotoEditorSDK.framework",
-				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK/PhotoEditorSDK.framework.dSYM",
-				"${PODS_ROOT}/imglyKit/PhotoEditorSDK/ImglyKit.framework",
-				"${PODS_ROOT}/imglyKit/PhotoEditorSDK/ImglyKit.framework.dSYM",
+				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK.framework",
+				"${PODS_ROOT}/imglyKit/ImglyKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhotoEditorSDK.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/PhotoEditorSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImglyKit.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/ImglyKit.framework.dSYM",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
