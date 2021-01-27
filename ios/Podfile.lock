@@ -1,6 +1,6 @@
 PODS:
   - boost-for-react-native (1.63.0)
-  - CocoaAsyncSocket (7.6.4)
+  - CocoaAsyncSocket (7.6.5)
   - CocoaLibEvent (1.0.0)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.62.2)
@@ -67,12 +67,12 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
-  - imglyKit (10.21.3)
+  - imglyKit (10.21.6)
   - OpenSSL-Universal (1.0.2.20):
     - OpenSSL-Universal/Static (= 1.0.2.20)
   - OpenSSL-Universal/Static (1.0.2.20)
-  - PhotoEditorSDK (10.21.3):
-    - imglyKit (= 10.21.3)
+  - PhotoEditorSDK (10.21.6):
+    - imglyKit (= 10.21.6)
   - RCTRequired (0.62.2)
   - RCTTypeSafety (0.62.2):
     - FBLazyVector (= 0.62.2)
@@ -295,7 +295,7 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RNPhotoEditorSDK (2.6.0):
+  - RNPhotoEditorSDK (2.6.1):
     - PhotoEditorSDK (~> 10.18)
     - React
     - React-RCTImage
@@ -426,7 +426,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
-  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   CocoaLibEvent: 2fab71b8bd46dd33ddb959f7928ec5909f838e3f
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   FBLazyVector: 4aab18c93cd9546e4bfed752b4084585eca8b245
@@ -440,9 +440,9 @@ SPEC CHECKSUMS:
   FlipperKit: 6dc9b8f4ef60d9e5ded7f0264db299c91f18832e
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
-  imglyKit: f3091be82eedddd14ff23a684cba3d16b909a567
+  imglyKit: cf341e6a4ed2fa0b8070df9f6ec1e71e579cd50f
   OpenSSL-Universal: ff34003318d5e1163e9529b08470708e389ffcdd
-  PhotoEditorSDK: 31e041df15833c5de2d4d35a7571a6d3e9cc8e08
+  PhotoEditorSDK: 2ffaf5aa7477f1326ed6e9324b57aa5252e9ecad
   RCTRequired: cec6a34b3ac8a9915c37e7e4ad3aa74726ce4035
   RCTTypeSafety: 93006131180074cffa227a1075802c89a49dd4ce
   React: 29a8b1a02bd764fb7644ef04019270849b9a7ac3
@@ -462,10 +462,10 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RNPhotoEditorSDK: 9cb658914ce62470feb0ac0f91e4070acb540912
+  RNPhotoEditorSDK: 19b264ecab792963aa63d244e33d6d25844fd0dc
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: 2bbcb621a822cbc3de26e2a512b22fab6ac8272f
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1
