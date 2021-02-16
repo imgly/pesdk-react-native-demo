@@ -45,6 +45,14 @@ static void InitializeFlipper(UIApplication *application) {
   RNPhotoEditorSDK.willPresentPhotoEditViewController = ^(PESDKPhotoEditViewController * _Nonnull photoEditViewController) {
     NSLog(@"willPresent: %@", photoEditViewController);
   };
+  // Change icons
+  [PESDK setBundleImageBlock:^UIImage * _Nullable(NSString * _Nonnull imageName) {
+    if ([imageName isEqualToString:@"imgly_icon_save"]) {
+      return [UIImage imageNamed:@"a_different_image"];
+    }
+
+    return nil;
+  }];
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
