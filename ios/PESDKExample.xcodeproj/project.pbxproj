@@ -444,11 +444,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-PESDKExample-PESDKExampleTests/Pods-PESDKExample-PESDKExampleTests-frameworks.sh",
 				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK.framework",
 				"${PODS_ROOT}/imglyKit/ImglyKit.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhotoEditorSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImglyKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -464,11 +466,13 @@
 				"${PODS_ROOT}/Target Support Files/Pods-PESDKExample/Pods-PESDKExample-frameworks.sh",
 				"${PODS_ROOT}/PhotoEditorSDK/PhotoEditorSDK.framework",
 				"${PODS_ROOT}/imglyKit/ImglyKit.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhotoEditorSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImglyKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
