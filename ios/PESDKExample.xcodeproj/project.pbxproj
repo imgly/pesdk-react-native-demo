@@ -18,6 +18,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* PESDKExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PESDKExampleTests.m */; };
 		54F3A492779AECFF71675796 /* libPods-PESDKExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 721F5387E20F5C2D7D5B43DB /* libPods-PESDKExample.a */; };
+		9E21754026257480000B52C8 /* CustomizationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E21753F26257480000B52C8 /* CustomizationController.swift */; };
 		C0BB0CE49C34F6FAE5F677A3 /* libPods-PESDKExample-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF249390C1CBACF5139E35AC /* libPods-PESDKExample-tvOSTests.a */; };
 		FD8586614A781D6ACE4834F4 /* libPods-PESDKExample-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D2F1871F2274C6BCC9E4C6 /* libPods-PESDKExample-tvOS.a */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,8 @@
 		5472D8F13F240A878D2DA747 /* Pods-PESDKExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PESDKExample.release.xcconfig"; path = "Target Support Files/Pods-PESDKExample/Pods-PESDKExample.release.xcconfig"; sourceTree = "<group>"; };
 		5BBC8674C4A23DF279C50A52 /* Pods-PESDKExample-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PESDKExample-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PESDKExample-tvOSTests/Pods-PESDKExample-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		721F5387E20F5C2D7D5B43DB /* libPods-PESDKExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PESDKExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E21753E26257480000B52C8 /* PESDKExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PESDKExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		9E21753F26257480000B52C8 /* CustomizationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomizationController.swift; path = PESDKExample/CustomizationController.swift; sourceTree = "<group>"; };
 		AA7470EA46150342EAA581FE /* libPods-PESDKExample-PESDKExampleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PESDKExample-PESDKExampleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF2F6A3715EBBEFBBD90C5E0 /* Pods-PESDKExample-PESDKExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PESDKExample-PESDKExampleTests.release.xcconfig"; path = "Target Support Files/Pods-PESDKExample-PESDKExampleTests/Pods-PESDKExample-PESDKExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		B6B0BDDD76F2917870250D7B /* Pods-PESDKExample-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PESDKExample-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PESDKExample-tvOS/Pods-PESDKExample-tvOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				9E21753F26257480000B52C8 /* CustomizationController.swift */,
+				9E21753E26257480000B52C8 /* PESDKExample-Bridging-Header.h */,
 			);
 			name = PESDKExample;
 			sourceTree = "<group>";
@@ -161,7 +166,6 @@
 				5BBC8674C4A23DF279C50A52 /* Pods-PESDKExample-tvOSTests.debug.xcconfig */,
 				C5E612A0DC6CDD0BCA4901CB /* Pods-PESDKExample-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -294,7 +298,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1240;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -576,6 +580,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E21754026257480000B52C8 /* CustomizationController.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -630,6 +635,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2441C25EFEC4E9E563589936 /* Pods-PESDKExample-PESDKExampleTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -653,6 +659,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF2F6A3715EBBEFBBD90C5E0 /* Pods-PESDKExample-PESDKExampleTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = PESDKExampleTests/Info.plist;
@@ -690,6 +697,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PESDKExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "PESDKExample-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -712,6 +720,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = PESDKExample;
+				SWIFT_OBJC_BRIDGING_HEADER = "PESDKExample-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
