@@ -2,30 +2,29 @@
 
 buildscript {
     repositories {
-        jcenter()
-        maven { url "https://plugins.gradle.org/m2/" }
+        mavenCentral()
         maven { url "https://artifactory.img.ly/artifactory/imgly" }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10"
-        classpath 'ly.img.android.sdk:plugin:8.0.8'
+        classpath 'ly.img.android.sdk:plugin:9.2.0'
     }
 }
 
 buildscript {
     ext {
-        buildToolsVersion = "28.0.3"
-        minSdkVersion = 16
-        compileSdkVersion = 28
-        targetSdkVersion = 28
+        buildToolsVersion = "30.0.2"
+        minSdkVersion = 21
+        compileSdkVersion = 30
+        targetSdkVersion = 30
+        ndkVersion = "21.4.7075529"
     }
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:3.5.2")
-
+        classpath("com.android.tools.build:gradle:4.2.2")
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -33,6 +32,7 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         mavenLocal()
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
@@ -44,7 +44,12 @@ allprojects {
         }
 
         google()
-        jcenter()
         maven { url 'https://www.jitpack.io' }
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://artifactory.img.ly/artifactory/imgly" }
     }
 }

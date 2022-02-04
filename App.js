@@ -7,25 +7,27 @@
  */
 
 import React from 'react';
+import type {Node} from 'react';
 import {
   SafeAreaView,
-  StyleSheet,
   ScrollView,
-  View,
-  Text,
   StatusBar,
-  TouchableHighlight,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+  TouchableHighlight
 } from 'react-native';
 
 import {
-  Header,
-  LearnMoreLinks,
   Colors,
   DebugInstructions,
+  Header,
+  LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {PESDK, Configuration, TintMode} from 'react-native-photoeditorsdk';
+import {PESDK, Configuration} from 'react-native-photoeditorsdk';
 
 /**
  * Uncomment the following single line of code to unlock PhotoEditor SDK automatically
@@ -35,7 +37,33 @@ import {PESDK, Configuration, TintMode} from 'react-native-photoeditorsdk';
  */
 // PESDK.unlockWithLicense(require('./pesdk_license'));
 
-const App: () => React$Node = () => {
+const Section = ({children, title}): Node => {
+  const isDarkMode = useColorScheme() === 'dark';
+  return (
+    <View style={styles.sectionContainer}>
+      <Text
+        style={[
+          styles.sectionTitle,
+          {
+            color: isDarkMode ? Colors.white : Colors.black,
+          },
+        ]}>
+        {title}
+      </Text>
+      <Text
+        style={[
+          styles.sectionDescription,
+          {
+            color: isDarkMode ? Colors.light : Colors.dark,
+          },
+        ]}>
+        {children}
+      </Text>
+    </View>
+  );
+};
+
+const App: () => Node = () => {
   const openEditor = () => {
     // Set up sample image
     let image = require('./assets/LA.jpg');
@@ -45,24 +73,23 @@ const App: () => React$Node = () => {
       sticker: {
         // Enable personal stickers
         personalStickers: true,
-        // Configure stickers
+        // Configure sticker library
         categories: [
           // Create sticker category with stickers
           {
             identifier: 'example_sticker_category_logos',
             name: 'Logos',
-            thumbnailURI: require('./assets/React-Logo.png'),
+            thumbnailURI: require('./assets/React.png'),
             items: [
               {
                 identifier: 'example_sticker_logos_react',
                 name: 'React',
-                stickerURI: require('./assets/React-Logo.png'),
+                stickerURI: require('./assets/React.png'),
               },
               {
                 identifier: 'example_sticker_logos_imgly',
-                name: 'img.ly',
-                stickerURI: require('./assets/imgly-Logo.png'),
-                tintMode: TintMode.SOLID,
+                name: 'IMG.LY',
+                stickerURI: require('./assets/Igor.png'),
               },
             ],
           },
@@ -89,72 +116,58 @@ const App: () => React$Node = () => {
       },
     );
   };
+  
+  const isDarkMode = useColorScheme() === 'dark';
+
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>PhotoEditor SDK</Text>
-              <TouchableHighlight onPress={openEditor}>
-                <Text style={styles.sectionDescription}>
-                  Click here to <Text style={styles.highlight}>edit a sample image</Text>.
-                </Text>
-              </TouchableHighlight>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
+    <SafeAreaView style={backgroundStyle}>
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <ScrollView
+        contentInsetAdjustmentBehavior="automatic"
+        style={backgroundStyle}>
+        <Header />
+        <View
+          style={{
+            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+          }}>
+          <Section title="PhotoEditor SDK">
+            <TouchableHighlight onPress={openEditor}>
+              <Text 
+                style={[
+                  styles.sectionDescription,
+                  {
+                    color: isDarkMode ? Colors.white : Colors.black,
+                  },
+                ]}>
+                Click here to <Text style={styles.highlight}>edit a sample image</Text>.
               </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+            </TouchableHighlight>
+          </Section>
+          <Section title="Step One">
+            Edit <Text style={styles.highlight}>App.js</Text> to change this
+            screen and then come back to see your edits.
+          </Section>
+          <Section title="See Your Changes">
+            <ReloadInstructions />
+          </Section>
+          <Section title="Debug">
+            <DebugInstructions />
+          </Section>
+          <Section title="Learn More">
+            Read the docs to discover what to do next:
+          </Section>
+          <LearnMoreLinks />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
@@ -162,24 +175,14 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
-    color: Colors.black,
   },
   sectionDescription: {
     marginTop: 8,
     fontSize: 18,
     fontWeight: '400',
-    color: Colors.dark,
   },
   highlight: {
     fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
   },
 });
 
