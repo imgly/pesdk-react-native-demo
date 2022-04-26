@@ -5395,19 +5395,19 @@ react-native-codegen@^0.0.7:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native-imglysdk@2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/react-native-imglysdk/-/react-native-imglysdk-2.12.0.tgz#5efba6863d4b66785fb5a5409809944812ac89e4"
-  integrity sha512-tNpPPRKO8m66f7tLt/+lnxmOwjG+TiOUiMeyzxnfcgWHpbeKvYtnsh04+oac61oHu1+FRJBA5a0r0Wfrl7wN/g==
+react-native-imglysdk@2.13.1:
+  version "2.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-imglysdk/-/react-native-imglysdk-2.13.1.tgz#f10df0f0f67af99c8a7d88ab9d0c767734348f77"
+  integrity sha512-sp0C5bRIlmcazmsk2lwoM1Vt5RzmDry1cABuVAIIqKkJoytRjor0Y1ZtLW/TH8AQ682RzPeDuK1ofcZNsTPWJQ==
   dependencies:
     "@expo/config-plugins" "^4.0.9"
 
-react-native-photoeditorsdk@^2.12.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.12.0.tgz#3c3011a9cb9f638f840c91312ad4423189572eba"
-  integrity sha512-SkPjBecVsN2eurXvY7iD4SnnjiSkrp5INE73DIVEf8CpVcwPX6uPEiFIuwuNKPWgeVmZiCgAdp9zptP45/EPsQ==
+react-native-photoeditorsdk@^2.13.1:
+  version "2.13.1"
+  resolved "https://registry.yarnpkg.com/react-native-photoeditorsdk/-/react-native-photoeditorsdk-2.13.1.tgz#d0a81a2ca252fce13eeb23001c2f6f70d45b10e7"
+  integrity sha512-N1NPDcCf2Wrp27RiN/rNouNDuELYST2sOgIi0MZ0JBRJPjNmHdxO0ZH+Ma15/T2/pvy73XUkPDk8YWIqi9M8ZQ==
   dependencies:
-    react-native-imglysdk "2.12.0"
+    react-native-imglysdk "2.13.1"
 
 react-native@0.66.3:
   version "0.66.3"
